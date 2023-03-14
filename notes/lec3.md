@@ -9,3 +9,14 @@ filter((String::isEmpty).negate()) // не скомпилируется (не в
 
 filter(Predicate.not(String::isEmpty)) // скомпилируется
 ```
+
+`.forEach()`
+
+```java
+...forEach(e -> {
+    if (...) {
+        //нельзя выйти из forEach
+    }
+})
+```
+* Даже если заключить `forEach` в функцию и вызвать `return`, он все равно отработает до конца
